@@ -1,0 +1,120 @@
+.container {
+  border: 1px solid #444;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+.inputGroup {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.helperText {
+  font-size: 0.875rem;
+  color: #aaa;
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  padding: 0.75rem;
+  border: 1px solid #555;
+  border-radius: 0.5rem;
+  background-color: #2b2b2b;
+  color: #f0f0f0;
+  font-size: 1rem;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.transactionButtonContainer {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.transactionButton {
+  color: white;
+  font-size: 1.1rem;
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+}
+
+.transactionButton:hover {
+  background-color: #ececec;
+  color: #222;
+}
+
+.transactionButton:active {
+  background-color: #ccc;
+  color: #000;
+  transform: scale(0.98);
+}
+
+.totalCoffee {
+  margin: 2rem 0 1rem;
+  font-size: 1.5rem;
+}
+
+.recentCoffees {
+  font-size: 1.25rem;
+  color: #ddd;
+  margin-bottom: 1rem;
+}
+
+.event {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: #2a2a2a;
+  border-radius: 0.5rem;
+}
+
+.eventHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.eventAddress,
+.eventTimestamp {
+  font-size: 0.875rem;
+  color: #ccc;
+}
+
+.eventMessage {
+  color: #eee;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+    width: 90%;
+  }
+
+  .transactionButton {
+    font-size: 1rem;
+    padding: 0.75rem;
+    margin: 1rem 0;
+  }
+}
