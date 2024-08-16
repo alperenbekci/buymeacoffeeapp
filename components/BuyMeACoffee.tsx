@@ -10,10 +10,10 @@ import { prepareContractCall, toWei } from "thirdweb";
 import { contract } from "../utils/contract";
 import styles from "./BuyMeACoffee.module.css";
 
-const truncateWalletAddress = (address) =>
+const truncateWalletAddress = (address: string | any[]) =>
   `${address.slice(0, 6)}...${address.slice(-4)}`;
 
-const convertDate = (timestamp) =>
+const convertDate = (timestamp: any) =>
   new Date(Number(timestamp) * 1000).toLocaleString();
 
 export const BuyMeACoffee = () => {
@@ -86,18 +86,28 @@ export const BuyMeACoffee = () => {
           Total Coffees: {totalCoffee?.toString()}
         </h3>
         <p className={styles.recentCoffees}>Recent Coffees:</p>
-        {contractEvents?.length > 0 &&
-          [...contractEvents].reverse().map((event, index) => (
+        {contractEvents?.length &&
+          contractEvents.length > 0 &&
+          [...(contractEvents || [])].reverse().map((event, index) => (
             <div key={index} className={styles.event}>
               <div className={styles.eventHeader}>
                 <p className={styles.eventAddress}>
-                  {truncateWalletAddress(event.args.sender)}
+                  {truncateWalletAddress(
+                    (event.args as Record<string, unknown>).sender as string
+                  )}
                 </p>
                 <p className={styles.eventTimestamp}>
-                  {convertDate(event.args.timestamp)}
+                  {convertDate(
+                    (event.args as Record<string, unknown>).timestamp
+                  )}
                 </p>
               </div>
-              <p className={styles.eventMessage}>{event.args.message}</p>
+              <p className={styles.eventMessage}>
+                {
+                  (event.args as Record<string, unknown>)
+                    .message as React.ReactNode
+                }
+              </p>
             </div>
           ))}
       </div>
