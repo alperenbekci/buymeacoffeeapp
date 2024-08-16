@@ -36,7 +36,7 @@ export default function Home() {
           colors: {
             accentText: "#808080",
             accentButtonBg: "#808080",
-            primaryButtonBg: "#ffffff",
+            primaryButtonBg: "#B8C7F4",
           },
         })}
         connectModal={{
@@ -51,7 +51,7 @@ export default function Home() {
       ) : (
         <div className={styles.infoSection}>
           <p className={styles.infoTitle}>
-            👋 Welcome to the Buy Me A Coffee App!
+            Welcome to the Buy Me A Coffee App!
           </p>
           <p className={styles.infoText}>☕ Support your creator.</p>
           <p className={styles.infoText}>
@@ -68,6 +68,16 @@ export default function Home() {
           </p>
         </div>
       )}
+      <footer className={styles.footer}>
+        <p>© 2024</p>
+        <a
+          href="https://github.com/alperenbekci/buymeacoffeeapp"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open Source
+        </a>
+      </footer>
     </div>
   );
 }
